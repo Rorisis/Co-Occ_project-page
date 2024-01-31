@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>DSRNSS</title>
+  <title>co-occ</title>
   <link rel="icon" type="image/x-icon" href="static/images/laptop.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,14 +52,12 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Towards Dynamic and Small Objects Refinement for Unsupervised Domain Adaptative Nighttime Segmentation</h1>
+            <h1 class="title is-1 publication-title">Co-Occ: Coupling Explicit feature Fusion with Volume Rendering Regularization for Multi-Modal 3D Semantic Occupancy Prediction</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <span class="author-block">Jingyi Pan</a><sup>1</sup>,</span>
-                <span class="author-block">Sihang Li</a><sup>1</sup>,</span>
-                    <span class="author-block">Yucheng Chen</a><sup>1</sup>,</span>
-                      <span class="author-block">Jinjing Zhu</a><sup>1</sup>,</span>
+                <span class="author-block">Zipeng Wang</a><sup>1</sup>,</span>
                         <a href="https://vlislab22.github.io/vlislab/linwang.html" target="_blank">Lin Wang</a><sup>1,2,*</sup>,</span>
                   </span>
                   </div>
@@ -75,7 +73,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2310.04747.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/num.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -97,7 +95,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/Rorisis/DSRNSS_codes" target="_blank"
+                    <a href="https://github.com/Rorisis/Co-Occ" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -108,7 +106,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2310.04747" target="_blank"
+                  <a href="https://arxiv.org/abs/num_id" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -135,7 +133,7 @@
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        The videos of nighttime semantic segmentation comparisons in NighttimeDriving Test set.
+        The video deoms of our 3D semantic prediction results and method illustration.
       </h2>
     </div>
   </div>
@@ -150,9 +148,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Nighttime semantic segmentation is essential for various applications, \eg, autonomous driving, which often faces challenges due to poor illumination and the lack of well-annotated datasets. Unsupervised domain adaptation (UDA) has shown potential for addressing the challenges and achieved remarkable results for nighttime semantic segmentation. However, existing methods still face limitations in 1) their reliance on style transfer or relighting models, which struggle to generalize to complex nighttime environments, and 2) their ignorance of dynamic and small objects like vehicles and traffic signs, which are difficult to be directly learned from other domains.
-This paper proposes a novel UDA method that refines both label and feature levels for dynamic and small objects for nighttime semantic segmentation. First, we propose a dynamic and small object refinement module to complement the knowledge of dynamic and small objects that are normally context-inconsistent due to poor illumination. Then, we design a feature prototype alignment module to reduce the domain gap by deploying contrastive learning between features and prototypes of the same class from different domains, while re-weighting the categories of dynamic and small objects.
-Extensive experiments on four benchmark datasets demonstrate that our method outperforms prior arts by a large margin for nighttime segmentation. Our codes will be released soon.
+            3D semantic occupancy prediction is a pivotal task in the field of autonomous driving. Recent approaches have great advances in 3D semantic occupancy predictions on a single modality. 
+            However, multi-modal semantic occupancy prediction approaches have encountered difficulties in dealing with the modality heterogeneity, modality misalignment, and insufficient modality interactions that arise during the fusion of different modalities data, which may result in the loss of important geometric and semantic information.
+This paper presents a novel multi-modal, i.e., LiDAR-camera 3D semantic occupancy prediction framework, dubbed Co-Occ, which couples explicit LiDAR-camera feature fusion with implicit volume rendering regularization. 
+The key insight is that volume rendering in the feature space can proficiently bridge the gap between 3D LiDAR sweeps and 2D images while serving as a physical regularization to impose accuracy and consistency on the occupancy prediction.
+Specifically, we first propose a Geometric- and Semantic-aware Fusion (GSFusion) module to explicitly enhance LiDAR features by incorporating neighboring camera features through a K-nearest neighbors (KNN) search.
+Then, we employ volume rendering to project the fused feature back to the image planes for reconstructing color and depth maps. 
+These maps are then supervised by input images from the camera and depth estimations derived from LiDAR, respectively.
+Extensive experiments on the popular nuScenes and SemanticKITTI benchmarks verify the effectiveness of our Co-Occ for 3D semantic occupancy prediction.  
           </p>
         </div>
       </div>
@@ -189,21 +192,28 @@ Extensive experiments on four benchmark datasets demonstrate that our method out
           <!-- Your image here -->
           <img src="static/images/quan1.png" alt="MY ALT TEXT"/>
           <h2 class="subtitle has-text-centered">
-            Comparison with the state-of-the-art methods and baseline models on the Dark Zurich-test set.
+            Comparison with the state-of-the-art methods on the nuScenes validation set.
         </h2>
       </div>
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/qua1.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          The qualitative comparison between our approach and some existing state-of-the-art methods on the Dark Zurich-val set.
+          The visualization results on the nuScenes validation set.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/quan2.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          The Comparison results on the SemanticKITTI test set.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/qua2.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          The qualitative comparison between our approach and some existing state-of-the-art methods on the NighttimeDriving test set.
+          The visualization results on the SemanticKITTI val set.
       </h2>
     </div>
   </div>
