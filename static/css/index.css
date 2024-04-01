@@ -144,7 +144,7 @@ body {
 } */
 
 .results-carousel {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .results-carousel .item {
